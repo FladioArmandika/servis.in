@@ -1,9 +1,3 @@
-# mern-starter
-project starter code 
+# servis.in
 
-
-
-
-do this first
-
-    npm install
+aplikasi pencari tukang servis elektronik
