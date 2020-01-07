@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from 'react-router-dom'
 import './index.css'
 
 export const Home = () => {
@@ -24,7 +24,7 @@ export const Home = () => {
                       <a class="nav-link" href="#">Tentang</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#">Login</a>
+                      <Link to='/login' className="nav-link">Login</Link>
                     </li>
                   </ul>
                 </div>
