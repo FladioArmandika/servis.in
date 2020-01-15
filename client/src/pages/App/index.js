@@ -2,8 +2,9 @@ import React from 'react'
 import { Router, Route, Switch
  } from "react-router-dom";
 import { Home } from '../Home';
-import { Login } from '../Auth/Login';
-import { Register } from '../Auth/Register';
+
+import { Error404 } from '../Error/Error404';
+import { Register, Login } from '../Auth';
 
 export const App = () => {
     return (
@@ -12,12 +13,16 @@ export const App = () => {
                 <Route exact path='/'>
                     <Home/>
                 </Route>
-                <Route path='/login'>
+                {/* <Route path='/login'>
                     <Login/>
-                </Route>
-                <Route path='/register'>
-                    <Register/>
-                </Route>
+                </Route> */}
+                {/* <Route path='/login' component={Login}/> */}
+                {/* <Route path='/register' component={Register}/>
+                <Route path='/register/tukang' component={RegisterTukang} />
+                <Route path='/register/client' component={RegisterClient} /> */}
+                <Route path='/login' component={Login}/>
+                <Route path='/register' component={Register}/>
+                <Route path="*" component={Error404}/>
             </Switch>
         </div>
     )

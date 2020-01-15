@@ -1,8 +1,8 @@
 import React from 'react'
-import { Card } from '../../components/Card'
-import { Button } from '../../components/Button'
+import { Card } from '../../../components/Card'
+import { Button } from '../../../components/Button'
 
-export const Login = () => {
+export const LoginForm = () => {
     return (
         <div>
             <div class="container">

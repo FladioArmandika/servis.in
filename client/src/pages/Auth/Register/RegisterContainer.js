@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import { Button } from '../../components/Button';
-export const Register = () => {
+import { Button } from '../../../components/Button';
+export const RegisterContainer = () => {
     return (
         <div>
             <div className="container">
@@ -9,21 +9,21 @@ export const Register = () => {
                 <div className="row">
                     <div className="col-md-6">
                         <h2>
-                            <Link>
+                            <Link to="/register/tukang">
                                 <Button content="Tukang Servis" addition="btn-block"/>
                             </Link>
                         </h2>
                     </div>
                     <div className="col-md-6">
                         <h2>
-                            <Link>
+                            <Link to='/register/client'>
                                 <Button content="Client" addition="btn-block"/>
                             </Link>
                         </h2>
                     </div>
                 </div>
-                
             </div>
+            
         </div>
     )
 }
