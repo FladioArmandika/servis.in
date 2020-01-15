@@ -1,9 +1,14 @@
+import { ADD_USER, DELETE_USER } from "./types"
+
+
 export const AddUser = (payload) => ({
-    type: "add user",
+    type: ADD_USER,
     payload
 })
 
 export const DeleteUser = (payload) => ({
-    type: "delete user",
+    type: DELETE_USER,
     payload
 })
+
+

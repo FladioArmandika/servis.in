@@ -1,7 +1,7 @@
 import { createStore } from "redux";
 import reducer from "./reducers";
 
-function configureStore(state = { rotating: true }) {
+function configureStore(state) {
   return createStore(reducer,state);
 }
 
