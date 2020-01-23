@@ -1,9 +1,11 @@
 import React from 'react'
 
-export const RegisterClient = () => {
+const Register = () => {
     return (
         <div>
-            Client
+            Register page
         </div>
     )
 }
+
+export default Register

@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Service = () => {
+export const Ads = () => {
     return (
         <div>
-            Service List
+            Ads
         </div>
     )
 }

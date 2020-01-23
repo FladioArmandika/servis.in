@@ -1,11 +1,13 @@
 import React from 'react'
 
-import './card.css'
-
-export const Card = ({content,width,padding}) => {
+const Card = ({children,width}) => {
     return (
-        <div className="card" style={{width:width,padding:padding}}>
-            {content}
-        </div> 
+        <div className="card" style={{width:width}}>
+            <div className="card-body">
+                {children}
+            </div>
+        </div>
     )
 }
+
+export default Card
