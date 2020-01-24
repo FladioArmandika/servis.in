@@ -43,7 +43,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        setUser: userActionCreator.setUser,
+        setUser: (params) => dispatch(userActionCreator.setUser(params)),
     }
 }
 
