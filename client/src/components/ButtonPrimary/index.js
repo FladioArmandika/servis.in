@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Button = ({children, block=""}) => {
+import './style.css'
+
+const ButtonPrimary = ({children, block=""}) => {
 
     return (
         <button className={`btn btn-primary btn-${block}`}>
@@ -10,4 +12,4 @@ const Button = ({children, block=""}) => {
     )
 }
 
-export default Button
+export default ButtonPrimary

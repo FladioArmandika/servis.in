@@ -1,23 +1,25 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import Button from '../ButtonPrimary'
 
 const NavigationBar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a class="navbar-brand" href="#">servis.in</a>
-                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <Link to='/' className="navbar-brand">servis.in</Link>
+                    <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li className="nav-item active">
+                            <Link to='/' className="nav-link">Home</Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                        <li className="nav-item">
+                            <Link to='/service' className="nav-link" href="#">Service</Link>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <li className="nav-item">
+                            <Link to='/auth' className="nav-link">Masuk</Link>
                         </li>
                     </ul>
                 </div>

@@ -1,15 +1,16 @@
 import React, { useState } from 'react'
-import { Card, Container } from '../../components'
-import Button from '../../components/ButtonPrimary'
+import { Card, Container, ButtonPrimary } from '../../components'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { getUsername } from '../../state/user/selector'
 import userActionCreator from '../../state/user/action'
+import authActionCreator from '../../state/auth/action'
 
 
 const Login = (props) => {
 
-    const [nameInput, setNameInput] = useState('')
+    const [emailInput, setEmailInput] = useState('')
+    const [passwordInput, setPasswordInput] = useState('')
 
     return (
         <div>
@@ -18,15 +19,15 @@ const Login = (props) => {
                     {props.name}
                     {/* <form> */}
                         <div className="form-group">
-                            <label>Username</label>
-                            <input type="text" className="form-control" onChange={(e) => setNameInput(e.target.value)}></input>
+                            <label>Email</label>
+                            <input type="email" className="form-control" onChange={(e) => setEmailInput(e.target.value)}></input>
                         </div>
                         <div className="form-group">
                             <label>Password</label>
-                            <input type="password" className="form-control"></input>
+                            <input type="password" className="form-control" onChange={(e) => setPasswordInput(e.target.value)}></input>
                         </div>
-                        <div onClick={() => props.setUser(nameInput)}>
-                            <Button block="block">Login</Button>
+                        <div onClick={() => props.login(emailInput,passwordInput)}>
+                            <ButtonPrimary block="block">Login</ButtonPrimary>
                         </div>
                     {/* </form> */}
                 </Card>
@@ -43,6 +44,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
+        login: (email, password) =>  dispatch(authActionCreator.login(email,password)),
         setUser: (params) => dispatch(userActionCreator.setUser(params)),
     }
 }
