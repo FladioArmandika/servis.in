@@ -17,8 +17,25 @@ const UserSchema = new Schema({
     },
 })
 
-UserSchema.methods.isPasswordCorrect = (password,callback) => {
-    bcrypt.compare(password,this.password, (err,same) => {
+
+UserSchema.pre('save', function(next) {
+    if (this.isNew || this.isModified('password')) {
+        const document = this;
+        bcrypt.hash(this.password, 10, (err, hashedPassword) => {
+            if(err) {
+                next(err)
+            } else {
+                document.password = hashedPassword;
+                next();
+            }
+        })
+    } else {
+        next()
+    }
+})
+
+UserSchema.methods.isPasswordCorrect = function(password,callback) {
+    bcrypt.compare(password,this.password, function(err,same) {
         if(err) {
             callback(err)
         } else {

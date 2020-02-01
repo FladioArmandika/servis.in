@@ -1,5 +1,7 @@
 const User  = require('../../models/user')
 
+const bcrypt    = require('bcryptjs')
+
 const UserService = {
     async getAll() {
         User.find({})
@@ -14,6 +16,8 @@ const UserService = {
             })
     },
     addUser(params) {
+
+
         let user = new User({
             email: params.email,
             password: params.password,

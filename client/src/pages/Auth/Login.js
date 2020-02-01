@@ -44,7 +44,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        login: (email, password) =>  dispatch(authActionCreator.login(email,password)),
+        login: (email, password) => { 
+            dispatch(authActionCreator.login(email,password))
+            
+        },
         setUser: (params) => dispatch(userActionCreator.setUser(params)),
     }
 }
